@@ -41,8 +41,8 @@ angular.module('starter', ['ui.router','ui.bootstrap'])
         .state('index', {
           url: "",
           views: {
-            "viewA": { templateUrl: "templates/index.viewA.html" },
-            "viewB": { templateUrl: "templates/index.viewB.html" }
+            "viewA": { templateUrl: "templates/header.html" },
+            "viewB": { templateUrl: "templates/content.html" }
           }
         })
         .state('route1', {
