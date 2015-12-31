@@ -2,7 +2,7 @@ angular.module('starter', ['ui.router','ui.bootstrap'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
-  //
+  /**
   // For any unmatched url, redirect to /state1
   $urlRouterProvider.otherwise("/state1");
   //
@@ -34,6 +34,42 @@ angular.module('starter', ['ui.router','ui.bootstrap'])
         $scope.things = ["A", "Set", "Of", "Things"];
       }
     });
+
+    **/
+
+    $stateProvider
+        .state('index', {
+          url: "",
+          views: {
+            "viewA": { templateUrl: "templates/index.viewA.html" },
+            "viewB": { templateUrl: "templates/index.viewB.html" }
+          }
+        })
+        .state('route1', {
+          url: "/route1",
+          views: {
+            "viewA": { templateUrl: "templates/route1.viewA.html" ,controller: function($scope) {
+
+                $scope.name="route1viewA";
+                console.log("rA");
+
+      }},
+            "viewB": { templateUrl: "templates/route1.viewB.html",controller: function($scope) {
+
+                $scope.name="route1viewB";
+
+                console.log("rB");
+      } }
+          }
+        })
+        .state('route2', {
+          url: "/route2",
+          views: {
+            "viewA": { templateUrl: "templates/route2.viewA.html" },
+            "viewB": { templateUrl: "templates/route2.viewB.html" }
+          }
+        })
+
 });
 
 
